@@ -1,9 +1,14 @@
 #!/bin/bash
-file="ttrackerReport.csv"
+
+currentdate="$(date +"%Y%m%d")"
+#file="ttrackerReport.csv"
+extensionfile=".csv"
+file="$currentdate$extensionfile"
 if [ -f "$file" ]
 then
     echo "$file found."
 else
+    echo "$file"
     echo "Date;Time;ActiveWindowName" >> $file
 fi
 
